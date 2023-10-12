@@ -13,8 +13,22 @@ function App() {
         {message: 'message2'},
         {message: 'message3'},
         {message: 'message4'},
-        {message: 'message5'}
+
     ])
+
+    //должна прозвониться функция для того что бы добавлять ее в title выше.далее мы ее прокидываем в <FullInput/>
+    const addMessage = (title: string) => {
+        //добавим новое сообщение. создадим переменную newMessage и
+        // приравняем переменной значение {message: title}
+        // title который к нам пришел в параметрах
+        let newMessage = {message: title}
+
+        //передаем ...message все старые сообщения(...spread оператор)
+        // +  newMessage и добавляем к ним новое сообщение
+        //
+        setMessage([newMessage, ...message]);
+
+    }
 
     return (
         <div className={'App'}>
